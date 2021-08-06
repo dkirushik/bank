@@ -1,0 +1,26 @@
+这是批量上传app截图，设置描述，关键词和内购，游戏排行榜之类的模板文件夹。
+使用此功能时先复制整个文件夹到自己的产品目录去，然后对立面信息进行设置配置
+app.xlsx和app.properties文件是必须的，也不能改名称，不能修改文件里面内容的结构，只能编辑里面的内容
+
+app.properties  ：禁止修改名称，用文本编辑器打开。修改com.apple.someapp为自己的app的bundle id，修改1.0为当前想设置截图描述信息的app的版本信息
+
+
+app.xlsx  ： 禁止修改名称，用excel编辑器之类的打开。里面包含的各种表格不能删除，不能修改表头，只能编辑表的内容部分。可以一次把一个app的描述，关键词，截图，iap，排行榜等等各种都配置在此文件中，然后使用appuploader的上传截图功能一次性设置所有内容。如果你的app不包含iap，排行榜之类，把对应的iap，iap_locale，achievement和对应的locale里面的内容删除，但是表头和表格不要删除。各个表的作用说明如下
+app：设置app的描述，关键词，各种连接，截图文件存放的目录，每一行代表一种语言，描述信息如果很长，建议配置到单独的文件，然后设置description_file为文件路径
+iap：内购信息配置，编辑时和iap_locale一起对应修改
+iap_locale：内购信息的多语种配置信息
+achievement：成就的配置信息
+achievement_locale：成就的多语言配置信息，编辑时和achievement对应修改
+leaderboard：排行榜的配置信息
+leaderboard_locale：排行榜的多语种国际化配置信息，编辑时和leaderboard对应修改
+country_code：国家语言编码，在配置上面几个表时的locale列的选项，禁止编辑修改此表
+gc_digital：leaderboard_locale表中的formatter_type列的可选项，也就是排行榜的排序数字类型，禁止编辑修改此表
+price_list：iap配置时price_tier列的数据可选信息，也就是可选择的iap的价格列表，禁止编辑修改此表
+
+其他文件和文件夹名称都是推荐的名称，可以修改编辑，修改编辑后只要在配置app.xlsx里面的图片字段对应上就好了
+
+先在itunesconnect.apple.com里面创建app，添加版本，
+然后apple账号登录appuploader软件，设置上传专用密码，点击上传截图按钮，然后选择你自己的配置好了的app信息，且包含app.properties的目录，点击开始，就可以一次性把app的所有信息配置好
+更新的时候也可以使用次功能进行，推荐使用模板的目录结构，例如killgame/1.0/app.properties,当更新的时候把1.0复制一次，killgame/2.0/app.properties,这个就算很多app，也不会乱，也可以直接把app.xlsx给策划人员，配置好后直接就上传了
+
+iOS-5.5-in，iOS-6.5-in，iOS-iPad-Pro等之类的包含app截图的目录名称不能修改，这个是对应的设备像素的
